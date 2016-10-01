@@ -10,7 +10,7 @@ Como se interpreta que existe una unica empresa se desacarta la relacion "n a n"
  No se detecta funcionalidad especifica entre los 2 tipos de empleados.
  Alternativas para implementar la solucion:
  
-1.- 
+1.-  [Alternativa a implementar]
  - Informacion en comun en una tabla Empleados.
  - Cada tipo de empleado posee su propia tabla con la informacion especifica del tipo.
  - Los valores de la tabla tipo (opciones), se implementan con un ENUM listando los posibles valores a tomar.
