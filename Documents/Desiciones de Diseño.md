@@ -21,5 +21,6 @@ Como se interpreta que existe una unica empresa se desacarta la relacion "n a n"
 
 2.- 
  - Toda la informacion en una unica tabla, en la que se tiene que especificar el tipo y otro campo.
+ 
 >Mas dificil de modificar a futuro.
 >Mas simple de implementar la solucion si solo es esa información. 
