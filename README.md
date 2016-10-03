@@ -1,6 +1,6 @@
 # proyectPHP
  - Dentro de la carpeta Clases se encuentran las clases PHP que definen los objetos pedidos.
- -
+ - Los diagramas de la carpeta Documentos son los primeros bosetos de la solucion presentada, puede variar el nombre de alguna funcion y/o variable de las difenretes clases especificadas. 
 
 ## Ambiente
 El proyecto fue desarrolado utilizando XAMPP para Windows10 (32bits) Version 7.0.9 / PHP 7.0.9
