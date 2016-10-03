@@ -37,7 +37,9 @@
     echo "La empresa {$nombreEmpresa} no está cargada en la DB";
   endif;
 
-
+  // XX-- Calcular Promedio de edad --XX
+  $promedio = $summa->getPromedioEdad();
+  echo "<hr /> Promedio de Edad: {$promedio} <hr /> ";
 
 
 ?>

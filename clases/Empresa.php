@@ -77,8 +77,7 @@
   }
 
   public function getEmpleado($idEmpleado){
-    //no verifica que el empleado sea de la empresa en cuestion,
-    //por eso se utiliza el metodo estatido definido en la propia clase.
+    //no verifica que el empleado sea de la empresa en cuestion
 
     return Empleado::getEmpleado($idEmpleado);
     //si no encuentra empleado retorna null
@@ -90,13 +89,14 @@
 
     $connection = new connection();
 
-    $query = $connection->prepare('SELECT AVG(edad) FROM ' . Empleado::TABLA . ' WHERE idEmpresa = :idEmpresa');
-    $query->bindParam(':id', $this->id);
+    //renombrar col de resultado pora devolverla
+    $query = $connection->prepare('SELECT AVG(edad) AS promedio FROM ' . Empleado::TABLA . ' WHERE idEmpresa = :idEmpresa');
+    $query->bindParam(':idEmpresa', $this->id);
     $query->execute();
     $row = $query->fetch();
     $connection = null;
 
-    return $row;
+    return $row['promedio'];
   }
  }
 

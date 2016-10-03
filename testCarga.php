@@ -22,6 +22,7 @@
   //--Diseñadpres
   $summa->agregarDisenador("Sebastian", "Gonzales", 31, "Web");
   $summa->agregarDisenador("Luciano", "Aguero", 28, "Web");
+
 */
 
   echo "</br> Descomentar lineas para insetar los elementos en la DB </br>";
