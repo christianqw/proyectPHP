@@ -32,7 +32,7 @@
   }
 
   protected function agregarEmpleado(){
-    echo "</br> Por guardar " .  $this->nombre."-". $this->apellido . "-" . $this->edad . "</br>" ;
+    echo "</br> Por guardar " .  $this->nombre ."-". $this->apellido . "-" . $this->edad ;
     $connection = new connection();
     $query = $connection->prepare('INSERT INTO ' . self::TABLA . ' (nombre, apellido, edad, idEmpresa) VALUES(:nombre, :apellido, :edad, :idEmpresa)');
     $query->bindParam(':nombre', $this->nombre);
@@ -40,8 +40,8 @@
     $query->bindParam(':edad', $this->edad);
     $query->bindParam(':idEmpresa', $this->idEmpresa);
     $query->execute();
-    echo "string --- ". $connection->lastInsertId();
     $this->id = $connection->lastInsertId();
+    echo " < id asignado: ". $this->id . "</br>";
     $connection = null;
   }
 

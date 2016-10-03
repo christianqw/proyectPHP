@@ -3,7 +3,9 @@
   require_once 'clases/Empresa.php';
   require_once 'clases/Connection.php';
 
-  // XX-- Mostrar todas las Empresas Cargadas --XX
+  // -----------------------------------------
+  // -- Mostrar todas las Empresas Cargadas --
+  // -----------------------------------------
   echo "<hr /> Empresas: </br></br>";
   $listaDeEmpresas = Empresa::getListaDeEmpresas();
 
@@ -17,8 +19,9 @@
 
   echo "<hr /> Empleados: ";
 
-  // XX-- Listar todas las Empleados de una Empresa --XX
-
+  // -----------------------------------------------
+  // -- Listar todas las Empleados de una Empresa --
+  // -----------------------------------------------
   $nombreEmpresa = "SUMMA";
   $summa = Empresa::getEmpresa($nombreEmpresa); // Seleccionar la empresa con la que se va a trabajar...
 
@@ -37,7 +40,9 @@
     echo "La empresa {$nombreEmpresa} no está cargada en la DB";
   endif;
 
-  // XX-- Calcular Promedio de edad --XX
+  // -------------------------------
+  // -- Calcular Promedio de edad --
+  // -------------------------------
   $promedio = $summa->getPromedioEdad();
   echo "<hr /> Promedio de Edad: {$promedio} <hr /> ";
 
