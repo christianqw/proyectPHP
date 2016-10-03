@@ -1,6 +1,8 @@
 <?php
   require_once 'Connection.php';
   require_once 'Empleado.php';
+  require_once 'Programador.php';
+
 
  class Empresa {
 	// tabla de la DB
@@ -39,13 +41,31 @@
     return $rows;
   }
 
-  public function agregarEmpleado(){
-    echo 'Agregar empleado???';
+  public static function getEmpresa($nombreEmpresa){
+    $connection = new connection();
+    $query = $connection->prepare('SELECT * FROM ' . self::TABLA . ' WHERE nombre = :nombre'); //genero la consulta
+    $query->bindParam(':nombre', $nombreEmpresa);
+    $query->execute();
+    $row = $query->fetch();
+    $connection = null;
+    if ($row){
+      return new self ($nombreEmpresa, $row['id']);
+    } else {
+      return null;
+    }
+  }
+
+  public function agregarProgramador($nombre, $apellido, $edad, $leng){
+    echo "string" .  $this->id ."</br>";
+    $empleado = new Programador($nombre, $apellido, $edad, $leng, $this->id);
+    echo "generado";
+    $empleado->agregarEmpleado();
+    echo "guardado";
   }
 
   public function listarEmpleados(){
     $connection = new connection();
-    $query = $connection->prepare('SELECT nombre, apellido, edad FROM ' . Empleado::TABLA . ' WHERE id_E = :idEmpresa');
+    $query = $connection->prepare('SELECT nombre, apellido, edad FROM ' . Empleado::TABLA . ' WHERE idEmpresa = :idEmpresa');
     $query->bindParam(':idEmpresa', $this->id); //todos los empleados de la empresa.
     $query->execute();
     $rows = $query->fetchAll();
@@ -68,7 +88,7 @@
 
     $connection = new connection();
 
-    $query = $connection->prepare('SELECT AVG(edad) FROM ' . Empleado::TABLA . ' WHERE id_E = :idEmpresa');
+    $query = $connection->prepare('SELECT AVG(edad) FROM ' . Empleado::TABLA . ' WHERE idEmpresa = :idEmpresa');
     $query->bindParam(':id', $this->id);
     $query->execute();
     $row = $query->fetch();

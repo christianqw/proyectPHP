@@ -11,7 +11,7 @@
    //Atributos de la clase
    private $lenguaje;
 
-    public function __construct($nombre, $apellido, $edad, $idEmpresa, $leng, $id=null) {
+    public function __construct($nombre, $apellido, $edad, $leng, $idEmpresa, $id=null) {
        parent::__construct($nombre, $apellido, $edad, $idEmpresa);
        $this->lenguaje=$leng;
     }
