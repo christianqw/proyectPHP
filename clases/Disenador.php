@@ -11,7 +11,7 @@
    //Atributos de la clase
    private $tipoD;
 
-    public function __construct($nombre, $apellido, $edad, $idEmpresa, $tipoD, $id=null) {
+    public function __construct($nombre, $apellido, $edad, $tipoD, $idEmpresa, $id=null) {
        parent::__construct($nombre, $apellido, $edad, $idEmpresa);
        $this->tipoD=$tipoD;
     }

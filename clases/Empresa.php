@@ -31,7 +31,7 @@
     $this->nombre = $nombre;
   }
 
-  public static function getListaEmpresas(){
+  public static function getListaDeEmpresas(){
     $connection = new connection(); //genero la conexion
     $query = $connection->prepare('SELECT nombre FROM ' . self::TABLA . ' ORDER BY nombre'); //genero la consulta
     $query->execute(); //ejecuto la consulta
@@ -56,14 +56,16 @@
   }
 
   public function agregarProgramador($nombre, $apellido, $edad, $leng){
-    echo "string" .  $this->id ."</br>";
     $empleado = new Programador($nombre, $apellido, $edad, $leng, $this->id);
-    echo "generado";
     $empleado->agregarEmpleado();
-    echo "guardado";
   }
 
-  public function listarEmpleados(){
+  public function agregarDisenador($nombre, $apellido, $edad, $tipoD){
+    $empleado = new Disenador($nombre, $apellido, $edad, $tipoD, $this->id);
+    $empleado->agregarEmpleado();
+  }
+
+  public function getListaDeEmpleados(){
     $connection = new connection();
     $query = $connection->prepare('SELECT nombre, apellido, edad FROM ' . Empleado::TABLA . ' WHERE idEmpresa = :idEmpresa');
     $query->bindParam(':idEmpresa', $this->id); //todos los empleados de la empresa.
