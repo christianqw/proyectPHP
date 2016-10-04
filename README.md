@@ -1,4 +1,4 @@
-# proyectPHP
+# proyectoPHP
  - Dentro de la carpeta Clases se encuentran las clases PHP que definen los objetos pedidos.
  - Los diagramas de la carpeta Documentos son los primeros bosetos de la solucion presentada, puede variar el nombre de alguna funcion y/o variable de las difenretes clases especificadas. 
 
